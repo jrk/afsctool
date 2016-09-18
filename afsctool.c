@@ -107,14 +107,22 @@ void compressFile(const char *inFile, struct stat *inFileInfo, long long int max
 	if (fsInfo.f_type != 17)
 		return;
 	
-	if (!S_ISREG(inFileInfo->st_mode))
+	if (!S_ISREG(inFileInfo->st_mode)) {
+		printf("File is not a regular file. Unable to compress.\n");
 		return;
-	if ((inFileInfo->st_flags & UF_COMPRESSED) != 0)
+	}
+	if ((inFileInfo->st_flags & UF_COMPRESSED) != 0) {
+		printf("Already compressed.\n");
 		return;
-	if (filesize > maxSize && maxSize != 0)
+	}
+	if (filesize > maxSize && maxSize != 0) {
+		printf("Filesize greater than maxSize. Unable to compress.\n");
 		return;
-	if (filesize == 0)
+	}
+	if (filesize == 0) {
+		printf("Filesize is zero. Nothing to compress.\n");
 		return;
+	}
 	
 	if (chflags(inFile, UF_COMPRESSED | inFileInfo->st_flags) < 0 || chflags(inFile, inFileInfo->st_flags) < 0)
 	{
