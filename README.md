@@ -1,5 +1,5 @@
 Source:  
-http://www.macosxhints.com/article.php?story=20090902223042255  
+http://hints.macworld.com/article.php?story=20090902223042255
 http://forums.macrumors.com/showthread.php?t=780570  
 http://files.me.com/brkirch/ijt4f7
 
