@@ -1,3 +1,5 @@
+High Sierra release: https://github.com/gingerbeardman/afsctool/releases/tag/10.13
+
 # NOTE: This is just a modestly tweaked mirror of someone else's code. _I did not write and do not maintain this._
 Source:  
 http://hints.macworld.com/article.php?story=20090902223042255  
